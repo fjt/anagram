@@ -1,0 +1,15 @@
+an anagram generating code by order of easiness of speech.
+
+use like this
+
+irb(main):336:0> "birds".anagram
+["bidrs", "brdis", "drbis", "bisrd", 
+-- snip --
+sbdri", "sbdir", "irsbd"]
+
+you should initialize 2gram occurrence table by giving
+words list as an argument of this method you use it for the first time.
+the list should be given as an array of words.
+
+you can alternate the occurrence table anytime you want by giving
+other alternate list.
