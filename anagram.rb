@@ -1,4 +1,10 @@
 class Array
+  def deleted(index)
+    sd=self.dup
+    sd.delete_at(index)
+    sd
+  end
+
   def sum
     self.inject(0){|r,e|r+e}
   end
@@ -6,6 +12,14 @@ class Array
   def mult
     self.inject(1){|r,e|r*e}
   end
+
+  def permutation(num=self.length)
+    return map{|e|[e]} if num == 1
+    self.inject_with_index([]){|ret, e, i|
+      ret+= self.deleted(i).permutation(num-1).map{|a|a.unshift(e)}}
+  end
+
+
 end
 
 
