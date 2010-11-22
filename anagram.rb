@@ -39,7 +39,7 @@ class String
     end
     self.split("").permutation.map{|word|
       [(0..(word.length-2)).gen{|i|k, v=word[i..i+1].map{|s|s.intern};@@wtb[k][v]}.mult,
-	word]
-    }.sort.reverse.transpose[1].map{|l|l.join}
+	word.join]
+    }.sort.reverse
   end
 end

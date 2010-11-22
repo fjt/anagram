@@ -2,7 +2,7 @@ an anagram generating code by order of easiness of speech.
 
 use like this
 
-irb(main):336:0> "birds".anagram
+irb(main):336:0> "birds".anagram(wordlist)
 ["bidrs", "brdis", "drbis", "bisrd", 
 -- snip --
 sbdri", "sbdir", "irsbd"]
@@ -11,5 +11,15 @@ you should initialize 2gram occurrence table by giving
 words list as an argument of this method you use it for the first time.
 the list should be given as an array of words.
 
+after the initialization, you dont have to give wordlist
+just do
+
+ "somthing".anagram
+
 you can alternate the occurrence table anytime you want by giving
-other alternate list.
+other word list.
+
+Sample data sets for English and Latin word lists are included
+as Ruby array data (Marshal.load to use them like this)
+
+"words".anagram(Marshal.load(File.open("anglicus/bt.wl").read)
